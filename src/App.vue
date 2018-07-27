@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <PushPop/>
+    <!-- <PushPop/> -->
+    <ShiftUnshift/>
   </div>
 </template>
 
 <script>
 import PushPop from './components/PushPop'
+import ShiftUnshift from './components/ShiftUnshift'
 
 export default {
   name: 'App',
   components: {
-    PushPop
+    PushPop,
+    ShiftUnshift
   }
 }
 </script>
