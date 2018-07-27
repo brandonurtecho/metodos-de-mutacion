@@ -1,29 +1,35 @@
 <template>
     <div>
         <div>
-            <button @click="ascendingSortMethod">Ordenar ascendentemente</button>
-            <button @click="descendingSortMethod">Ordenar descendentemente</button>
+            <label for="data">Data </label>
+            <input id="data" type="text" placeholder="Ingrese datos" v-model="data"/>
+            <button @click="unshiftMethod">unshift</button>
+            <button @click="shiftMethod">shift</button>
         </div>   
         <div v-for="(item, index) in items" :key="index">
-            {{item}}
+            {{item.message}}
         </div>
-    </div>    
+    </div>        
 </template>
 
 <script>
 export default {
-  name: "ShiftUnshift",
+  name: "Example",
   data() {
     return {
-      items: [3, 8, 1, 2, 7, 4, 9]
+      items: [],
+      data: ""
     };
   },
   methods: {
-    ascendingSortMethod: function() {
-      this.items.sort();
+    unshiftMethod: function() {
+      console.log("se ejecuto unshift");
+      var obj = { message: this.data };
+      this.items.unshift(obj);
     },
-    descendingSortMethod: function() {
-      this.items.sort().reverse();
+    shiftMethod: function() {
+      console.log("se ejecuto shift");
+      this.items.shift();
     }
   }
 };
