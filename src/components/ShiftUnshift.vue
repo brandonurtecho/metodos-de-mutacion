@@ -23,9 +23,8 @@ export default {
   },
   methods: {
     unshiftMethod: function() {
-      console.log("se ejecuto unshift");
-      var obj = { message: this.data };
-      this.items.unshift(obj);
+      console.log("se ejecuto unshift");      
+      this.items.unshift({ message: this.data });
     },
     shiftMethod: function() {
       console.log("se ejecuto shift");
